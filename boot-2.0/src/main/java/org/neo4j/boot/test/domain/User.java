@@ -1,5 +1,6 @@
 package org.neo4j.boot.test.domain;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
 
@@ -35,5 +36,15 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+            .append("id", id)
+            .append("firstName", firstName)
+            .append("lastName", lastName)
+            .append("email", email)
+            .toString();
     }
 }
